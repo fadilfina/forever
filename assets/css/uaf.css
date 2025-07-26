@@ -1,0 +1,334 @@
+@font-face {
+					font-family: 'newyork';
+					src: url('../fonts/6864Newyork.woff2') format('woff2'),
+						url('../fonts/6864Newyork.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.newyork{font-family: 'newyork' !important;}
+
+						@font-face {
+					font-family: 'edensor-free';
+					src: url('../fonts/6521Edensor-free.woff2') format('woff2'),
+						url('../fonts/6521Edensor-free.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.edensor-free{font-family: 'edensor-free' !important;}
+
+						@font-face {
+					font-family: 'over-thingking';
+					src: url('../fonts/62Over-thingking.woff2') format('woff2'),
+						url('../fonts/62Over-thingking.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.over-thingking{font-family: 'over-thingking' !important;}
+
+						@font-face {
+					font-family: 'mogan';
+					src: url('../fonts/9471Mogan.woff2') format('woff2'),
+						url('../fonts/9471Mogan.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.mogan{font-family: 'mogan' !important;}
+
+						@font-face {
+					font-family: 'vensfolk';
+					src: url('../fonts/7592Vensfolk.woff2') format('woff2'),
+						url('../fonts/7592Vensfolk.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.vensfolk{font-family: 'vensfolk' !important;}
+
+						@font-face {
+					font-family: 'vogate';
+					src: url('../fonts/2096Vogate.woff2') format('woff2'),
+						url('../fonts/2096Vogate.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.vogate{font-family: 'vogate' !important;}
+
+						@font-face {
+					font-family: 'delon';
+					src: url('../fonts/9529Delon.woff2') format('woff2'),
+						url('../fonts/9529Delon.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.delon{font-family: 'delon' !important;}
+
+						@font-face {
+					font-family: 'achava';
+					src: url('../fonts/6699Achava.woff2') format('woff2'),
+						url('../fonts/6699Achava.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.achava{font-family: 'achava' !important;}
+
+						@font-face {
+					font-family: 'capella';
+					src: url('../fonts/7375Capella.woff2') format('woff2'),
+						url('../fonts/7375Capella.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.capella{font-family: 'capella' !important;}
+
+						@font-face {
+					font-family: 'gadish';
+					src: url('../fonts/767Gadish.woff2') format('woff2'),
+						url('../fonts/767Gadish.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.gadish{font-family: 'gadish' !important;}
+
+						@font-face {
+					font-family: 'history';
+					src: url('../fonts/632History.woff2') format('woff2'),
+						url('../fonts/632History.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.history{font-family: 'history' !important;}
+
+						@font-face {
+					font-family: 'qagetto';
+					src: url('../fonts/4192Qagetto.woff2') format('woff2'),
+						url('../fonts/4192Qagetto.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.qagetto{font-family: 'qagetto' !important;}
+
+						@font-face {
+					font-family: 'queen-rogette';
+					src: url('../fonts/4535Queen-Rogette.woff2') format('woff2'),
+						url('../fonts/4535Queen-Rogette.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.queen-rogette{font-family: 'queen-rogette' !important;}
+
+						@font-face {
+					font-family: 'romland';
+					src: url('../fonts/1951ROMLAND.woff2') format('woff2'),
+						url('../fonts/1951ROMLAND.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.romland{font-family: 'romland' !important;}
+
+						@font-face {
+					font-family: 'starsight';
+					src: url('../fonts/3233Starsight.woff2') format('woff2'),
+						url('../fonts/3233Starsight.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.starsight{font-family: 'starsight' !important;}
+
+						@font-face {
+					font-family: 'gabyan';
+					src: url('../fonts/9462Gabyan.woff2') format('woff2'),
+						url('../fonts/9462Gabyan.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.gabyan{font-family: 'gabyan' !important;}
+
+						@font-face {
+					font-family: 'analogue';
+					src: url('../fonts/3106Analogue.woff2') format('woff2'),
+						url('../fonts/3106Analogue.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.analogue{font-family: 'analogue' !important;}
+
+						@font-face {
+					font-family: 'fugi';
+					src: url('../fonts/5760Fugi.woff2') format('woff2'),
+						url('../fonts/5760Fugi.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.fugi{font-family: 'fugi' !important;}
+
+						@font-face {
+					font-family: 'ginger';
+					src: url('../fonts/3902Ginger.woff2') format('woff2'),
+						url('../fonts/3902Ginger.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.ginger{font-family: 'ginger' !important;}
+
+						@font-face {
+					font-family: 'granola';
+					src: url('../fonts/2843Granola.woff2') format('woff2'),
+						url('../fonts/2843Granola.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.granola{font-family: 'granola' !important;}
+
+						@font-face {
+					font-family: 'grande';
+					src: url('../fonts/4497Grande.woff2') format('woff2'),
+						url('../fonts/4497Grande.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.grande{font-family: 'grande' !important;}
+
+						@font-face {
+					font-family: 'sugar';
+					src: url('../fonts/6436Sugar.woff2') format('woff2'),
+						url('../fonts/6436Sugar.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.sugar{font-family: 'sugar' !important;}
+
+						@font-face {
+					font-family: 'ginkgo';
+					src: url('../fonts/571Ginkgo.woff2') format('woff2'),
+						url('../fonts/571Ginkgo.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.ginkgo{font-family: 'ginkgo' !important;}
+
+						@font-face {
+					font-family: 'calista';
+					src: url('../fonts/3667Calista.woff2') format('woff2'),
+						url('../fonts/3667Calista.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.calista{font-family: 'calista' !important;}
+
+						@font-face {
+					font-family: 'satisfy';
+					src: url('../fonts/3203Satisfy.woff2') format('woff2'),
+						url('../fonts/3203Satisfy.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.satisfy{font-family: 'satisfy' !important;}
+
+						@font-face {
+					font-family: 'ginger-modern';
+					src: url('../fonts/4990Ginger-Modern.woff2') format('woff2'),
+						url('../fonts/4990Ginger-Modern.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.ginger-modern{font-family: 'ginger-modern' !important;}
+
+						@font-face {
+					font-family: 'south-amsterdam';
+					src: url('../fonts/1625South-Amsterdam.woff2') format('woff2'),
+						url('../fonts/1625South-Amsterdam.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.south-amsterdam{font-family: 'south-amsterdam' !important;}
+
+						@font-face {
+					font-family: 'girly-style';
+					src: url('../fonts/681Girly-Style.woff2') format('woff2'),
+						url('../fonts/681Girly-Style.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.girly-style{font-family: 'girly-style' !important;}
+
+						@font-face {
+					font-family: 'just-sunday-bold';
+					src: url('../fonts/9179Just-Sunday-Bold.woff2') format('woff2'),
+						url('../fonts/9179Just-Sunday-Bold.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.just-sunday-bold{font-family: 'just-sunday-bold' !important;}
+
+						@font-face {
+					font-family: 'just-sunday';
+					src: url('../fonts/8131Just-Sunday.woff2') format('woff2'),
+						url('../fonts/8131Just-Sunday.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.just-sunday{font-family: 'just-sunday' !important;}
+
+						@font-face {
+					font-family: 'gardenisa';
+					src: url('../fonts/9685Gardenisa.woff2') format('woff2'),
+						url('../fonts/9685Gardenisa.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.gardenisa{font-family: 'gardenisa' !important;}
+
+						@font-face {
+					font-family: 'bartes-malaga';
+					src: url('../fonts/1233Bartes-Malaga.woff2') format('woff2'),
+						url('../fonts/1233Bartes-Malaga.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.bartes-malaga{font-family: 'bartes-malaga' !important;}
+
+						@font-face {
+					font-family: 'geraldo-island';
+					src: url('../fonts/8814Geraldo-Island.woff2') format('woff2'),
+						url('../fonts/8814Geraldo-Island.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.geraldo-island{font-family: 'geraldo-island' !important;}
+
+						@font-face {
+					font-family: 'scholastica';
+					src: url('../fonts/9370Scholastica.woff2') format('woff2'),
+						url('../fonts/9370Scholastica.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.scholastica{font-family: 'scholastica' !important;}
+
+						@font-face {
+					font-family: 'charlotte-southern';
+					src: url('../fonts/3822Charlotte-Southern.woff2') format('woff2'),
+						url('../fonts/3822Charlotte-Southern.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.charlotte-southern{font-family: 'charlotte-southern' !important;}
+
+						@font-face {
+					font-family: 'charlotte-southern-s';
+					src: url('../fonts/5353Charlotte-Southern-S.woff2') format('woff2'),
+						url('../fonts/5353Charlotte-Southern-S.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.charlotte-southern-s{font-family: 'charlotte-southern-s' !important;}
+
+						@font-face {
+					font-family: 'giava';
+					src: url('../fonts/702Giava.woff2') format('woff2'),
+						url('../fonts/702Giava.woff') format('woff');
+					  font-display: auto;
+				}
+
+				.giava{font-family: 'giava' !important;}
+
+		
