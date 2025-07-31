@@ -2005,7 +2005,7 @@ Banten 42436</div>
 
 				<div id="respond-5168" class="respond saic-clearfix">
 
-					<form action="" method="POST" id="commentform-5168" onsubmit="return sendToWhatsApp(this);">
+					<form action="javascript:void(0);" method="POST" id="commentform-5168" onsubmit="return sendToWhatsApp(this);">
 
 						
 							<p class="comment-form-author saic-field-1">
@@ -2638,11 +2638,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-<script src="assets/js/saic_lib.js" id="saic_library-js"></script>
+<!-- <script src="assets/js/saic_lib.js" id="saic_library-js"></script> -->
 <script id="wds_rsvp-js-extra">
 var WDS_RSVP = {"ajaxurl":"#","nonce":"39d8ac40e9","jPagesNum":"10","textCounterNum":"500","thanksComment":"Terima kasih atas ucapan Anda!","duplicateComment":"Anda mungkin membiarkan salah satu kolom kosong, atau menggandakan komentar","guestMax":"10","textNavNext":"Next","textNavPrev":"Previous"};
 </script>
-<script src="assets/js/wds-rsvp.js" id="wds_rsvp-js"></script>
+<!-- <script src="assets/js/wds-rsvp.js" id="wds_rsvp-js"></script> -->
 <script src="assets/js/wdp-swiper.min.js" id="wdp-swiper-js-js"></script>
 <script src="assets/js/qr-code.js" id="weddingpress-qr-js"></script>
 <script src="assets/js/exad-scripts.min.js?ver=3.2.1.1" id="exad-main-script-js"></script>
@@ -2817,6 +2817,7 @@ function sendToWhatsApp(form) {
     
     // Mengarahkan ke WhatsApp
     window.open(urlWhatsApp, '_blank');
+    console.log("Opening WhatsApp with URL: " + urlWhatsApp);
     
     // Mengembalikan false agar form tidak di-submit
     return false;
@@ -2845,7 +2846,11 @@ function gantiNamaTamu() {
 }
 
 // Panggil fungsi gantiNamaTamu saat halaman dimuat
-window.addEventListener('load', gantiNamaTamu);
+window.addEventListener('load', function() {
+    gantiNamaTamu();
+    
+    // Event listener untuk tombol submit sudah ditangani oleh onsubmit form
+});
 </script>
 	</body>
 </html>
