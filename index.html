@@ -1618,7 +1618,7 @@ Kebumen</p>				</div>
 				</div>
 				<div class="elementor-element elementor-element-0b10030 elementor-widget elementor-widget-heading" data-id="0b10030" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">089651058922</h2>				</div>
+					<h2 class="elementor-heading-title elementor-size-default">085974973097</h2>				</div>
 				</div>
 					</div>
 		</div>
@@ -1642,7 +1642,7 @@ Kebumen</p>				</div>
 
 		<div class="head-title"></div>
 		<div class="elementor-button-wrapper">
-						<div class="copy-content spancontent" style="display: none;">089651058922</div>
+						<div class="copy-content spancontent" style="display: none;">085974973097</div>
 				
 			<a style="cursor:pointer;" onclick="copyText(this)" data-message="Copied" class="elementor-button" role="button">
 				
@@ -1799,7 +1799,7 @@ Banten 42436</div>
 				<div class="elementor-element elementor-element-4f8ee20 wdsdv-enabled--yes elementor-invisible elementor-widget elementor-widget-weddingpress-forms" data-id="4f8ee20" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;zoomIn&quot;}" data-widget_type="weddingpress-forms.default">
 				<div class="elementor-widget-container">
 					        <div class="elementor-wdp-form-wrapper elementor-wdp-form-button-align-fullwidth">
-            <form method="get" class="wdp-form wdp-wa-form" id="wdp-wa-form-4f8ee20" data-waapi="https://api.whatsapp.com/send?phone=6289651058922&amp;text=Hai%2C%20saya%20%2A%25nama%25%2A%20ingin%20konfirmasi%20pemberian%20angpao%20melalui%20Rekening%20%2A%25jumlah%25%2A.%20Bisa%20di%20cek%20ya.%20Terima%20kasih.">
+            <form method="get" class="wdp-form wdp-wa-form" id="wdp-wa-form-4f8ee20" data-waapi="https://api.whatsapp.com/send?phone=6285974973097&amp;text=Hai%2C%20saya%20%2A%25nama%25%2A%20ingin%20konfirmasi%20pemberian%20angpao%20melalui%20Rekening%20%2A%25jumlah%25%2A.%20Bisa%20di%20cek%20ya.%20Terima%20kasih.">
                 <div class="wdp-form-fields-wrapper">
                     <div class="wdp-form-field-nama">
                         <label for="wdp-form-nama-4f8ee20" class="">
@@ -2789,7 +2789,7 @@ function sendToWhatsApp(form) {
     pesan += "Ucapan: " + ucapan;
     
     // Nomor WhatsApp tujuan (ganti dengan nomor yang diinginkan)
-    var nomorWhatsApp = "6289651058922"; // Ganti dengan nomor WhatsApp yang diinginkan
+    var nomorWhatsApp = "6285974973097"; // Ganti dengan nomor WhatsApp yang diinginkan
     
     // Membuat URL WhatsApp dengan pesan
     var urlWhatsApp = "https://wa.me/" + nomorWhatsApp + "?text=" + encodeURIComponent(pesan);
@@ -2849,7 +2849,15 @@ function gantiNamaTamu() {
 window.addEventListener('load', function() {
     gantiNamaTamu();
     
-    // Event listener untuk tombol submit sudah ditangani oleh onsubmit form
+    // Tambahkan event listener untuk tombol submit
+    var submitButton = document.getElementById('submit-5168');
+    if (submitButton) {
+        submitButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            sendToWhatsApp(document.getElementById('commentform-5168'));
+            return false;
+        });
+    }
 });
 </script>
 	</body>
