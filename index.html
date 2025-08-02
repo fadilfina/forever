@@ -1716,8 +1716,8 @@ Banten 42436</div>
 							<div class="saic-wrap-attendance">
 								<select name="attendance" id="attendance" class="saic-select">
 									<option value="" selected="" disabled>Konfirmasi Kehadiran</option>
-									<option value="Iya, Saya akan hadir">Iya, Saya akan hadir</option>
-									<option value="Maaf, Saya tidak bisa hadir">Maaf, Saya tidak bisa hadir</option>
+									<option value="present">Iya, Saya akan hadir</option>
+									<option value="notpresent">Maaf, Saya tidak bisa hadir</option>
 									<option value="notsure">Masih Ragu</option>
 								</select>
 								<span class="saic-required">*</span>
@@ -2498,23 +2498,23 @@ function sendToWhatsApp(form) {
     // Mengubah nilai attendance ke bahasa Indonesia
     var kehadiran = "";
     if (attendance === "present") {
-        kehadiran = "Hadir";
+        kehadiran = "Iya, Saya akan hadir";
         // Jika hadir, ambil jumlah tamu
         jumlahTamu = document.getElementById('guest').value;
     } else if (attendance === "notpresent") {
-        kehadiran = "Tidak Hadir";
+        kehadiran = "Maaf, Saya tidak bisa hadir";
     } else if (attendance === "notsure") {
         kehadiran = "Masih Ragu";
     }
     
     // Membuat pesan untuk WhatsApp
     var pesan = "Konfirmasi Kehadiran Undangan\n\n";
-    pesan += "Nama: " + nama + "\n";
-    pesan += "Konfirmasi: " + kehadiran + "\n";
+    pesan += "Nama: *" + nama + "*\n";
+    pesan += "Konfirmasi: *" + kehadiran + "*\n";
     if (jumlahTamu) {
-        pesan += "Jumlah Tamu: " + jumlahTamu + " orang\n";
+        pesan += "Jumlah Tamu: *" + jumlahTamu + "* orang\n";
     }
-    pesan += "Ucapan: " + ucapan;
+    pesan += "Ucapan: *" + ucapan + "*";
     
     // Nomor WhatsApp tujuan (ganti dengan nomor yang diinginkan)
     var nomorWhatsApp = "6285974973097"; // Ganti dengan nomor WhatsApp yang diinginkan
