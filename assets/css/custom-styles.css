@@ -8,12 +8,6 @@
     --text-color: #44525F;
     --light-bg: #F5F7FA;
     --border-color: #d5deea;
-    --icon-primary: #5ebcf7;
-    --icon-secondary: #d0ecff;
-    --icon-accent: #ff3f6c;
-    --icon-accent-light: #ffe3ec;
-    --icon-gold: #d4af37;
-    --icon-gold-light: #f5e7c1;
     --heading-font: 'Poppins', Sans-serif;
     --body-font: 'DM Sans', Sans-serif;
     --spacing-sm: 10px;
@@ -99,8 +93,8 @@
 
 /* Section Styles - Doa Untuk Pengantin */
 .elementor-element-125aa392 {
+    background-color: var(--light-bg);
     padding: var(--spacing-lg) 0;
-    color: #FFFFFF;
 }
 
 .elementor-element-4ec6965d {
@@ -170,7 +164,6 @@
 .elementor-element-7eb9fa9 {
     background-color: var(--light-bg);
     padding: var(--spacing-lg) 0;
-    color: var(--text-color);
 }
 
 .elementor-element-d675fb7 {
@@ -242,7 +235,7 @@ h2.wedding-section-title {
     font-family: var(--heading-font);
     font-size: 18px;
     font-weight: 500;
-    color: var(--icon-primary);
+    color: var(--primary-color);
     margin-bottom: var(--spacing-sm);
     text-align: center;
     line-height: 1.4;
