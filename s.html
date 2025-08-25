@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Undangan Pernikahan</title>
+    <style>
+        :root {
+            --primary-color: #333;
+            --secondary-color: #555;
+            --background-color: #121212;
+            --surface-color: #1e1e1e;
+            --accent-color: #4a90e2;
+            --text-color: #f5f5f5;
+            --border-color: #333;
+            --success-color: #4caf50;
+            --error-color: #f44336;
+            --border-radius: 8px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: var(--spacing-lg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            font-weight: 400;
+            color: var(--text-color);
+        }
+
+        .input-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        label {
+            display: block;
+            margin-bottom: var(--spacing-sm);
+            font-weight: 500;
+        }
+
+        input[type="text"], 
+        input[type="url"] {
+            width: 100%;
+            padding: var(--spacing-md);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            background-color: var(--surface-color);
+            color: var(--text-color);
+            font-size: 16px;
+            transition: border-color var(--transition-speed);
+        }
+
+        input[type="text"]:focus,
+        input[type="url"]:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin: var(--spacing-lg) 0;
+        }
+
+        button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md) var(--spacing-lg);
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color var(--transition-speed), transform var(--transition-speed);
+        }
+
+        button:hover {
+            background-color: #3a7bc8;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .result-container {
+            margin-top: var(--spacing-lg);
+            padding: var(--spacing-lg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            background-color: var(--surface-color);
+            min-height: 300px;
+            max-height: 500px;
+            overflow-y: auto;
+            position: relative;
+            transition: box-shadow var(--transition-speed);
+        }
+        
+        .result-container.highlight {
+            box-shadow: 0 0 8px var(--accent-color);
+        }
+
+        .result {
+            white-space: pre-wrap;
+            font-family: monospace;
+            line-height: 1.5;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: flex-end;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .copy-button, .whatsapp-button {
+            background-color: var(--surface-color);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+
+        .copy-button:hover {
+            background-color: #2a2a2a;
+        }
+        
+        .whatsapp-button {
+            background-color: #25D366;
+            color: white;
+            border-color: #25D366;
+        }
+        
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+        }
+
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            background-color: var(--success-color);
+            color: white;
+            opacity: 0;
+            transition: opacity var(--transition-speed);
+            z-index: 1000;
+        }
+
+        .notification.show {
+            opacity: 1;
+        }
+
+        .error-message {
+            color: var(--error-color);
+            font-size: 14px;
+            margin-top: var(--spacing-sm);
+            display: none;
+        }
+
+        /* Removed advanced options styles */
+
+        @media (max-width: 768px) {
+            .container {
+                padding: var(--spacing-md);
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .result-container {
+                padding: var(--spacing-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generator Undangan Pernikahan</h1>
+        
+        <div class="input-group">
+            <label for="name-input">Masukkan Nama</label>
+            <input type="text" id="name-input" placeholder="Contoh: Achmad Mutias">
+            <div class="error-message" id="name-error">Nama tidak boleh kosong</div>
+        </div>
+        
+        <div class="button-container">
+            <button id="generate-button">Buat Undangan</button>
+        </div>
+        
+        <div class="result-container">
+            <label for="result">Hasil</label>
+            <div class="result" id="result"></div>
+            <div class="button-group">
+                <button class="copy-button" id="copy-button">Copy Undangan</button>
+                <button class="whatsapp-button" id="whatsapp-button">Share WhatsApp</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="notification" id="notification">Undangan berhasil disalin!</div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const nameInput = document.getElementById('name-input');
+            const generateButton = document.getElementById('generate-button');
+            const resultElement = document.getElementById('result');
+            const copyButton = document.getElementById('copy-button');
+            const notification = document.getElementById('notification');
+            const nameError = document.getElementById('name-error');
+            const resultContainer = document.querySelector('.result-container');
+            const whatsappButton = document.getElementById('whatsapp-button');
+            
+            // Base URL
+            const defaultBaseUrl = window.location.origin + window.location.pathname.replace('link-generator.html', '');
+            
+            // No tab switching or advanced options needed anymore
+            
+            // Generate link function - Basic
+            function generateBasicLink() {
+                const name = nameInput.value.trim();
+                
+                // Validate input
+                if (!name) {
+                    nameError.style.display = 'block';
+                    nameInput.focus();
+                    return;
+                }
+                
+                nameError.style.display = 'none';
+                
+                // Encode the name for URL
+                const encodedName = encodeURIComponent(name);
+                
+                // Generate the full URL
+                const baseUrl = "https://i.fadil05me.my.id/";
+                const generatedUrl = `${baseUrl}?to=${encodedName}`;
+                
+                // Create the formatted invitation message
+                const invitationMessage = `Kepada Yth. 
+Bapak/Ibu/Saudara/i 
+${name} 
+_____________________ 
+
+Assalamualaikum Warahmatullahi Wabarakatuh 
+
+Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami. 
+
+Berikut link undangan kami, untuk info lengkap dari acara, bisa kunjungi : 
+
+${generatedUrl} 
+
+Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu. 
+
+Wassalamualaikum Warahmatullahi Wabarakatuh 
+
+Terima Kasih 
+
+Hormat kami, 
+Fadil dan Fina 
+____________________`;
+                
+                // Display the result
+                resultElement.innerHTML = invitationMessage.replace(/\n/g, '<br>');
+                
+                // Add animation to result container
+                highlightResult();
+            }
+            
+            // Advanced link generation has been removed
+            
+            // Validate URL
+            function isValidUrl(string) {
+                try {
+                    new URL(string);
+                    return true;
+                } catch (_) {
+                    return false;
+                }
+            }
+            
+            // Highlight result container
+            function highlightResult() {
+                resultContainer.classList.add('highlight');
+                setTimeout(() => {
+                    resultContainer.classList.remove('highlight');
+                }, 300);
+            }
+            
+            // Copy to clipboard function
+            function copyToClipboard() {
+                // Get the HTML content and convert <br> tags back to newlines for plain text
+                const htmlContent = resultElement.innerHTML;
+                const textToCopy = htmlContent.replace(/<br\s*\/?>/gi, '\n');
+                
+                if (!textToCopy) return;
+                
+                // Use the Clipboard API if available
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(textToCopy)
+                        .then(() => showNotification())
+                        .catch(err => console.error('Could not copy text: ', err));
+                } else {
+                    // Fallback for older browsers
+                    const textarea = document.createElement('textarea');
+                    textarea.value = textToCopy;
+                    textarea.style.position = 'fixed';
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    
+                    try {
+                        document.execCommand('copy');
+                        showNotification();
+                    } catch (err) {
+                        console.error('Could not copy text: ', err);
+                    }
+                    
+                    document.body.removeChild(textarea);
+                }
+            }
+            
+            // Share to WhatsApp function
+            function shareToWhatsApp() {
+                // Get the HTML content and convert <br> tags back to newlines for plain text
+                const htmlContent = resultElement.innerHTML;
+                const textToShare = htmlContent.replace(/<br\s*\/?>/gi, '\n');
+                
+                if (!textToShare) return;
+                
+                // Encode the text for URL
+                const encodedText = encodeURIComponent(textToShare);
+                
+                // Create WhatsApp URL
+                const whatsappUrl = `https://api.whatsapp.com/send?text=${encodedText}`;
+                
+                // Open in new tab
+                window.open(whatsappUrl, '_blank');
+            }
+            
+            // Show notification function
+            function showNotification() {
+                notification.classList.add('show');
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 2000);
+            }
+            
+            // Check if URL has parameters to pre-fill
+            function checkUrlParams() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const nameParam = urlParams.get('name');
+                
+                if (nameParam) {
+                    nameInput.value = nameParam;
+                    generateBasicLink();
+                }
+            }
+            
+            // Event listeners
+            generateButton.addEventListener('click', generateBasicLink);
+            
+            nameInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    generateBasicLink();
+                }
+            });
+            
+            nameInput.addEventListener('input', function() {
+                nameError.style.display = 'none';
+            });
+            
+            copyButton.addEventListener('click', copyToClipboard);
+            document.getElementById('whatsapp-button').addEventListener('click', shareToWhatsApp);
+            
+            // Check URL parameters on load
+            checkUrlParams();
+        });
+    </script>
+</body>
+</html>
